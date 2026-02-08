@@ -52,13 +52,19 @@ export default function Home() {
     searchItems(1);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => { 
+  if (e.key === "Enter") {                          
+    e.preventDefault();                             
+    handleSearchClick();                           
+  }                                                 
+}; 
 
 
   return (
     <>  <h1 className="title">Metro Finder</h1>
 
       <main className="main">
-        <div className="searchbox">
+        <div className="searchbox" onKeyDown={handleKeyDown}>
 
           <div className="detail">
             <input
@@ -67,6 +73,7 @@ export default function Home() {
               placeholder="Enter Station"
               value={station}
               onChange={(e) => setStation(e.target.value)}
+              
             />
           </div>
 
@@ -77,6 +84,7 @@ export default function Home() {
               className="input"
               value={date}
               onChange={(e) => setDate(e.target.value)}
+             
             />
           </div>
 
@@ -85,6 +93,7 @@ export default function Home() {
               className="input"
               value={line}
               onChange={(e) => setLine(e.target.value)}
+          
             >
               <option value="">Select Line</option>
               <option value="RED">RED</option>
@@ -98,6 +107,7 @@ export default function Home() {
               <option value="GREY">GREY</option>
               <option value="AQUA">AQUA</option>
               <option value="RAPID">RAPID METRO (GURUGRAM)</option>
+              
 
             </select>
           </div>
