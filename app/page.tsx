@@ -84,6 +84,8 @@ export default function Home() {
             />
           </div>
 
+          
+
           <div className="detail">
             <input
               type="date"
@@ -94,6 +96,26 @@ export default function Home() {
              
             />
           </div>
+
+          {currentState === "LOADING" && (
+        <div className="status-message">Searching the metro archives...</div>
+      )}
+
+      
+      {currentState === "NO_RESULT" && (
+        <div className="no-results-card">
+          <p>🚫 No items found matching your criteria.</p>
+          <span>Try changing the station or selecting a different date.</span>
+        </div>
+      )}
+
+      
+      {currentState === "ERROR" && (
+        <div className="status-message error">
+          ⚠️ Something went wrong. Please try again later.
+        </div>
+      )}
+
 
           <div className="detail">
             <select
