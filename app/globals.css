@@ -719,3 +719,28 @@ tbody td:nth-child(6) {
 .last-updated-text strong {
   color: var(--dmrc-red); 
 }
+
+.disclaimer-footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto; 
+}
+
+.github-icon {
+  width: 24px !important; 
+  height: 24px !important;
+  display: inline-block;
+  margin-top: 8px;
+  fill: #4b5563; 
+}
+
+.last-updated-text strong {
+  color: #ef4444; 
+}
+
+@media (max-width: 768px) {
+  .disclaimer-footer {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+}
