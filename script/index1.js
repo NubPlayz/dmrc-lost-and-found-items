@@ -48,19 +48,14 @@ fs.writeFileSync(
     `utf-8`
 );
 
-console.timeEnd(`time taken:`);
-
 const lastUpdated = {
     date: new Date().toISOString()
 };
 
 fs.writeFileSync(
-    "lastUpdated.json",
+    new URL("./lastUpdated.json", import.meta.url),
     JSON.stringify(lastUpdated, null, 2),
     "utf-8"
 );
 
-
-
-
-
+console.timeEnd(`time taken:`);
