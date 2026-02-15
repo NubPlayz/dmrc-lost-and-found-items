@@ -1,7 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dmrcLogo from './asset/dmrc-logo.png';
+import dmrcGirl from './asset/dmrcGirl.jpg';
 
+import lastUpdateData from '../script/lastUpdated.json' assert { type: 'json' };
+
+
+const updateInfo = lastUpdateData as { date: string };
 
 type LostItem = {
   id: number;
@@ -36,7 +42,11 @@ export default function Home() {
 
     try {
       setCurrentState("LOADING");
-      const res = await fetch(`/api/items?${params.toString()}`);
+      setResults([]);
+      const [res] = await Promise.all([
+      fetch(`/api/items?${params.toString()}`),
+      new Promise((resolve) => setTimeout(resolve, 600)) 
+    ]); 
       const data = await res.json();
 
       setCurrentState(()=>{
@@ -72,6 +82,8 @@ export default function Home() {
     <>  <h1 className="title">Metro Finder</h1>
 
       <main className="main">
+
+        
         <div className="searchbox" onKeyDown={handleKeyDown}>
           <div className="detail">
             <input
@@ -97,25 +109,7 @@ export default function Home() {
             />
           </div>
 
-          {currentState === "LOADING" && (
-        <div className="status-message">Searching the metro archives...</div>
-      )}
-
-      
-      {currentState === "NO_RESULT" && (
-        <div className="no-results-card">
-          <p>🚫 No items found matching your criteria.</p>
-          <span>Try changing the station or selecting a different date.</span>
-        </div>
-      )}
-
-      
-      {currentState === "ERROR" && (
-        <div className="status-message error">
-          ⚠️ Something went wrong. Please try again later.
-        </div>
-      )}
-
+          
 
           <div className="detail">
             <select
@@ -145,12 +139,70 @@ export default function Home() {
             Search
           </button>
 
-
+        
         </div>
+        
+
+  <div className="status-container">
+
+  
+    {currentState === "NOT_STARTED" && (
+      <div className="info-card">
+        <div className="image-frame">
+          <img src={dmrcGirl.src} alt="Guide" className="guide-img" />
+        </div>
+        <div className="text-content">
+          <h2>Welcome to Metro Finder</h2>
+          <p>Please enter details above to find lost items.</p>
+        </div>
+      </div>
+    )}
+    
+
+    {currentState === "NO_RESULT" && (
+      <div className="no-results-card">
+        <p>🚫 No items found matching your criteria.</p>
+        <span>Try changing the station or selecting a different date.</span>
+
+        
+      </div>
+      
+    )}
+
+    
+
+    {currentState === "ERROR" && (
+      <div className="status-message error">
+        ⚠️ Something went wrong. Please try again later.
+      </div>
+    
+    )}
+    
+
+    
+{currentState === "LOADING" && (
+  <div className="status-container">
+    <div className="loading-state">
+      <div className="logo-wrapper">
+        
+        <img src={dmrcLogo.src} alt="DMRC Logo" className="metro-logo" />
+        <div className="loader-ring"></div>
+      </div>
+      <p>Searching the metro archives...</p>
+    </div>
+  </div>
+)}
+</div>
+
+
+
+
+
 
       </main>
+
       {results?.length > 0 && (
-        <div className="table-wrapper ">
+        <div className="table-wrapper">
           <table>
             <thead>
               <tr>
@@ -213,9 +265,25 @@ export default function Home() {
             </div>
           </div>
 
-
+        
         </div>
+
+        
+
+        
       )}
+
+      <footer className="disclaimer-footer">
+
+        <p className="last-updated-text">
+    Data last synced: <strong> {new Date(updateInfo.date).toLocaleString()}</strong>
+  </p>
+        <p>
+          <strong>Disclaimer:</strong> This is an unofficial project. All logos, 
+          images, and characters are the property of Delhi Metro Rail Corporation (DMRC). 
+          This site is for informational purposes only.
+        </p>
+      </footer>
     </>
   );
 }

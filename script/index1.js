@@ -50,6 +50,16 @@ fs.writeFileSync(
 
 console.timeEnd(`time taken:`);
 
+const lastUpdated = {
+    date: new Date().toISOString()
+};
+
+fs.writeFileSync(
+    "lastUpdated.json",
+    JSON.stringify(lastUpdated, null, 2),
+    "utf-8"
+);
+
 
 
 
