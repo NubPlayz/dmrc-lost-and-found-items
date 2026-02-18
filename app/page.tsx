@@ -7,7 +7,7 @@ import dmrcGirl from './asset/dmrcGirl.jpg';
 
 import lastUpdateData from '../script/lastUpdated.json' assert { type: 'json' };
 
-
+import { Analytics } from "@vercel/analytics/next"
 const updateInfo = lastUpdateData as { date: string };
 
 type LostItem = {
@@ -292,6 +292,8 @@ export default function Home() {
     </svg>
   </a>
       </footer>
+    
+    <Analytics />
     </>
   );
 }
