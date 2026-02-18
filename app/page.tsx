@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import dmrcLogo from './asset/dmrc-logo.png';
 import dmrcGirl from './asset/dmrcGirl.jpg';
 
+
 import lastUpdateData from '../script/lastUpdated.json' assert { type: 'json' };
 
 
