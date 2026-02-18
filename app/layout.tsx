@@ -6,6 +6,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: "Metro Finder",
   description: "Find lost items in Delhi Metro",
+  verification: {
+    google: "-H80yUP3sbYE-SJpOm-LniZYRdOpQwlJFT_IjdMP_tg",
+  },
 };
 
 
