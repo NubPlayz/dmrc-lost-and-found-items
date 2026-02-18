@@ -30,7 +30,10 @@ export async function GET(request: Request) {
   //dwfw
   console.log({ station })
   if (station !== undefined) {
-    if (stationSet.size > 0 && stationSet.has(station)) {
+    if(stationSet.size == 0) {
+      stationSet.add(station)
+    }
+    else if (stationSet.size > 0 && stationSet.has(station)) {
       stationSet.clear()
       stationSet.add(station)
     } else {
@@ -44,7 +47,7 @@ export async function GET(request: Request) {
   let filteredItems;
 
   if (stationSet.size === 0 && !date) {
-    // No filters at all → return everything
+    
     filteredItems = allItems;
   } else {
     filteredItems = filterByDateAndStation(
