@@ -80,7 +80,12 @@ export default function Home() {
 
 
   return (
-    <>  <h1 className="title">Metro Finder</h1>
+    <>
+      <header className="hero-section">
+        <h1 className="title">D<span className="M">M</span>RC: Lost and Found</h1>
+        <p className="subtitle">Find lost items in Delhi Metro</p>
+      </header>
+
 
       <main className="main">
 
