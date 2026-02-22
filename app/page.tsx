@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image"
 import { useState, useEffect } from "react";
 import dmrcLogo from './asset/dmrc-logo.png';
 import dmrcGirl from './asset/dmrcGirl.jpg';
@@ -82,8 +82,20 @@ export default function Home() {
   return (
     <>
       <header className="hero-section">
-        <h1 className="title">D<span className="M">M</span>RC: Lost and Found</h1>
-        <p className="subtitle">Find lost items in Delhi Metro</p>
+        <div className="hero-image">
+          <Image
+            src="/banner.png"
+            alt="Delhi Metro Banner"
+            width={1920}
+            height={600}
+            className="hero-img"
+          />
+        </div>
+
+        <div className="hero-content">
+          <h1 className="title">D<span className="M">M</span>RC: Lost and Found</h1>
+          <p className="subtitle">Find lost items in Delhi Metro</p>
+        </div>
       </header>
 
 
