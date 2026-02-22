@@ -100,13 +100,17 @@ export default function Home() {
 
 
           <div className="detail">
-            <label>Date</label>
-            <input
-              type="date"
-              className="input"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
 
+            <input
+              type="text"
+              className="input"
+              placeholder="dd-mm-yyyy"
+              value={date}
+              onFocus={(e) => e.target.type = "date"}
+              onBlur={(e) => {
+                if (!e.target.value) e.target.type = "text"
+              }}
+              onChange={(e) => setDate(e.target.value)}
             />
           </div>
 
