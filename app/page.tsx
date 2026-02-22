@@ -100,6 +100,7 @@ export default function Home() {
 
 
           <div className="detail">
+            <label>Date</label>
             <input
               type="date"
               className="input"
