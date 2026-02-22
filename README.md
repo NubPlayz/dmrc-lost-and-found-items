@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DMRC MetroFinder
 
-## Getting Started
+[![readme style](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/richardschneider/common-readme)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/your-username/your-repo/graphs/commit-activity)
+[![GitHub Actions](https://img.shields.io/badge/Data%20Sync-Automated-blue.svg)](https://github.com/your-username/your-repo/actions)
 
-First, run the development server:
+A high-performance search engine for the Delhi Metro Rail Corporation (DMRC) database. This tool enables multi-parameter filtering across the entire station network, updated daily via automated pipelines.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+https://metro-finder-lost-items.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+https://github.com/user-attachments/assets/842ba00a-bcb2-499c-96de-13671b3252a0
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Features
+* **Dynamic Filtering:** Query the database by Station Name, Line Color, or Data Attributes in any combination.
+* **Cron-Job Updates:** Powered by GitHub Actions to fetch the latest data from the official DMRC API every 24 hours.
+* **Lightweight:** Built for speed and low-bandwidth environments.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
+* **Frontend:** [React / Next.js]
+* **Backend:** [Nextjs / Nodejs]
+* **Automation:** GitHub Actions (Cron)
+* **Data Source:** Official DMRC API
+* **Package Manager:** PNPM 
 
-## Deploy on Vercel
+## Installation & Setup
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/NubPlayz/MetroFinder-Lost-Items
+   pnpm install
+   pnpm run dev
