@@ -19,13 +19,30 @@ https://metro-finder-lost-items.vercel.app
 
 
 
-https://github.com/user-attachments/assets/842ba00a-bcb2-499c-96de-13671b3252a0
+
+https://github.com/user-attachments/assets/44261677-ac3d-4b8b-9cc5-6d565a2e8767
+
+
+
 
 
 ## Key Features
 * **Dynamic Filtering:** Query the database by Station Name, Line Color, or Data Attributes in any combination.
 * **Cron-Job Updates:** Powered by GitHub Actions to fetch the latest data from the official DMRC API every 24 hours.
 * **Lightweight:** Built for speed and low-bandwidth environments.
+
+# Mobile View
+
+# Search
+<img width="952" height="881" alt="image" src="https://github.com/user-attachments/assets/0c07daff-6d63-411b-a4b0-87e9990e43fb" />
+
+# Table
+
+<img width="574" height="810" alt="image" src="https://github.com/user-attachments/assets/51ce06b0-dd52-42d9-967b-06c7b3bfd726" />
+
+
+
+
 
 ## Tech Stack
 * **Frontend:** [React / Next.js]
