@@ -19,6 +19,7 @@ for(let i=1; i<=totalPages; i+=batchSize){
                 const res= await fetch(`https://backend.delhimetrorail.com/api/v2/en/lost_found_items/?page=${page}`);
 
                 if(!res.ok) {
+                    console.error(res)
                     throw new Error(`Failed page ${page}`);
 
             
